@@ -1,3 +1,47 @@
-#linkContainer {
-	text-align: center;
+.Subject {
+	background-color: gray;
+	height: 80px;
+	width: 100%;
+}
+.Subject > h1 {
+	display: inline-block;
+	text-align: left;	
+	margin-right: 380px;
+	margin-left: 20px;
+} 
+.a {
+	text-align: right;
+}
+#line {
+	background-color: red;
+	height: 5px;
+}
+body {
+	background: #667db6;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+	color: ;
+	font-family: serif;
+}
+.section-1 {
+	background-color: #A2F4FF;
+	height: 210px;
+	width: ;
+	border-radius: 30px;
+}
+.section-2 {
+	background-color: #A2FFB6;
+	height: 210px;
+	width: ;	
+	border-radius: 30px;
+}
+.section-3 {
+	background-color: #A2C3FF;
+	height: 210px;
+	width: ;
+	border-radius: 30px;
+}
+.test-q {
+	margin: 20px;
 }
