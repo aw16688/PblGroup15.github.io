@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width;initial-scale=1">
+		<title>PBL Group 15</title>
+		<link rel="stylesheet" type="text/css" href="https://unpkg.com/normalize-css/normalize.css" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" />
+	</head>
+	<body>
+		<div class="Subject">
+			<h1></h1>
+			<a href=../index.html>Home</a>
+			<a href=history-info.html>History</a>
+			<a href=chemistry-info.html>Chemistry</a>
+			<a href=english-info.html>English</a>
+			<a href=geometry-info.html>Geometry</a>
+			<a href=spanish-info.html>Spanish</a>
+		</div>
+		<h2 id="test_status"></h2>
+		<div id="test"></div>
+		<script type="text/javascript">
+		// pos is position of where the user in the test or which question they're up to
+		var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
+		// this is a multidimensional array with 4 inner array elements with 5 elements inside them
+		// if you don't want answers viewable in the code, then you should use PHP and mySQL database
+		var incorrect = [
+		 [""],
+		 [""],
+		 [""],
+		 [""],
+		 [""],
+		 [""],
+		 [""],
+		 [""]
+		];
+		
+		var questions = [
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""],
+		  ["", "", "", "", "", ""]
+		  ];
+		// this get function is short for the getElementById function  
+		function get(x){
+		  return document.getElementById(x);
+		}
+		function renderQuestion(){
+		  test = get("test");
+		  if(pos >= questions.length){
+		    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
+		    get("test_status").innerHTML = "Test completed";
+		    // resets the variable to allow users to restart the test
+		    pos = 0;
+		    correct = 0;
+		    // stops rest of renderQuestion function running when test is completed
+		    return false;
+		  }
+		  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+		  question = questions[pos][0];
+		  chA = questions[pos][1];
+		  chB = questions[pos][2];
+		  chC = questions[pos][3];
+		  chD = questions[pos][4];
+		  test.innerHTML = "<h3>"+question+"</h3>";
+		  // the += appends to the data we started on the line above
+		  test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
+		  test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
+		  test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
+		  test.innerHTML += "<input type='radio' name='choices' value='D'> "+chD+"<br><br>";
+		  test.innerHTML += "<button onclick='checkAnswer()' name='submitButton'>Submit Answer</button>";
+		}
+		function checkAnswer(){
+		  // use getElementsByName because we have an array which it will loop through
+		  choices = document.getElementsByName("choices");
+		  for(var i=0; i<choices.length; i++){
+		    if(choices[i].checked){
+		      choice = choices[i].value;
+		    }
+		  }
+		  // checks if answer matches the correct choice
+		  if(choice == questions[pos][5]){
+		    //each time there is a correct answer this value increases
+		    correct++;
+		    pos++;
+		    renderQuestion();
+		  } else if(choice != questions[pos][5]) {
+		  			test.innerHTML += "<p>"+incorrect[pos][0]+"</p>";
+		    		test.innerHTML += "<button onclick='NextQuestion()'>Next Question</button>";
+		}}
+		function NextQuestion() {
+		    pos++;
+		    renderQuestion();
+		}
+		window.addEventListener("load", renderQuestion, false);
+		</script>
+	</body>
+</html>
