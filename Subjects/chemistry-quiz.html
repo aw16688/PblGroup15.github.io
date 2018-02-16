@@ -25,30 +25,25 @@
 		// this is a multidimensional array with 4 inner array elements with 5 elements inside them
 		// if you don't want answers viewable in the code, then you should use PHP and mySQL database
 		var incorrect = [
-		 [""],
-		 [""],
-		 [""],
-		 [""],
-		 [""],
-		 [""],
-		 [""],
-		 [""]
+		 ["The Bohr model is one of the most widely used atomic models. Like all models it has a nucleus with electrons circling it. What’s sets the Bohr model apart is its multi-layered representation of the electrons. It can contain 2 electrons in its first shell, 8 in the second, 32 in the third, and so on and so forth."],
+		 ["The Rutherford model is similar to the Bohr model, with a central nucleus made of protons and neutrons while electrons fly around it. However the Rutherford model shows the path of each electron."],
+		 ["Electronegativity: This trend is nearly the same as the trend for ionization. There is one major difference, however; the noble gases and inner transition metals are missing from this equation, having no electronegativity at all. "],
+		 ["However, hydrogen and the inner transition metals are exempt from this rule. This is because they are placed outside of the periodic table itself."],
+		 ["Compounds are two or more atoms that have been bound together. The compound is then the same combination of elements throughout."],
+		 ["Mixtures are made of many atoms. They have many elements strewn about them, it would be like impure water, having many extra minerals inside of it."]
 		];
 		
 		var questions = [
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""],
-		  ["", "", "", "", "", ""]
+		  ["What is the most commonly used atomic model?", "Rutherford", "Quantum Mchanical", "Bohr", "Boar", "C"],
+		  ["What is the major difference between each model?", "Different amount of nucliei", "Different representation of the path of electrons", "Different colors", "Different dimensions", "B"],
+		  ["Which two patterns on the periodic table are the most alike?", "Ionization and electronegativity", "Atomic size and ionization", "Electronegativity and atomic size", "Atomic weight and atomic mass", "A"],
+		  ["Why is Hydrogen exempt from most patterns of the periodic table?", "Because it is the first element on the table", "Because it is a glass", "Because it technically belongs somwhere else on the periodic table", "Caus' its special", "C"],
+		  ["If you bonded two types of pure elements to each other, what would you get.", "More elements", "A nuclere explosion", "A mixture", "A compound", "D"],
+		  ["What would desert sand be?", "bits of unmeltted glass", "Elements", "A Compound", "A mixture", "D"]
 		  ];
 		// this get function is short for the getElementById function  
 		function get(x){
-		  return document.getElementById(x);
+		  return document.getElemenetById(x);
 		}
 		function renderQuestion(){
 		  test = get("test");
