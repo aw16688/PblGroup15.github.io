@@ -41,22 +41,22 @@
 		  ["If you bonded two types of pure elements to each other, what would you get.", "More elements", "A nuclere explosion", "A mixture", "A compound", "D"],
 		  ["What would desert sand be?", "bits of unmeltted glass", "Elements", "A Compound", "A mixture", "D"]
 		  ];
-		// this get function is short for the getElementById function  
+		// this get function is short for the getElementById function  		
 		function get(x){
 		  return document.getElemenetById(x);
 		}
 		function renderQuestion(){
-		  test = get("test");
+		  test = document.getElementById("test");
 		  if(pos >= questions.length){
 		    test.innerHTML = "<h2>You got "+correct+" of "+questions.length+" questions correct</h2>";
-		    get("test_status").innerHTML = "Test completed";
+		    document.getElementById("test_status").innerHTML = "Test completed";
 		    // resets the variable to allow users to restart the test
 		    pos = 0;
 		    correct = 0;
 		    // stops rest of renderQuestion function running when test is completed
 		    return false;
 		  }
-		  get("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
+		  document.getElementById("test_status").innerHTML = "Question "+(pos+1)+" of "+questions.length;
 		  question = questions[pos][0];
 		  chA = questions[pos][1];
 		  chB = questions[pos][2];
