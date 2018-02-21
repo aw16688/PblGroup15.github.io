@@ -21,7 +21,7 @@
 		<div id="test"></div>
 		<script type="text/javascript">
 		// pos is position of where the user in the test or which question they're up to
-		var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, correct = 0;
+		var pos = 0, test, test_status, question, choice, choices, chA, chB, chC, chD, img, correct = 0;
 		// this is a multidimensional array with 4 inner array elements with 5 elements inside them
 		// if you don't want answers viewable in the code, then you should use PHP and mySQL database
 		var imgs = [../Images/2A417162-F40F-4BD1-92B1-19B0FD7DE28B.jpeg, ../Images/A4694833-E0BF-4AFC-8845-AAFF7A97CFDF.jpeg, 454775D8-9FA9-4DBA-93E4-6E1C3C408344.jpeg, ../Images/8BCC53F7-D71E-4DEC-B9C8-0C30143F7A74.jpeg, ../Images/A5847528-1C51-4D98-BBD3-EA48CAE31DE7.jpeg, ../Images/CD315679-8CDB-48F0-BCFF-0C9B99795807.jpeg];
@@ -67,7 +67,7 @@
 		  chD = questions[pos][4];
 		  test.innerHTML = "<h3>"+question+"</h3>";
 		  // the += appends to the data we started on the line above
-		  test.innerHTML += "<img src="img">" "<br>";
+		  test.innerHTML += "<img src="+img+">" "<br>";
 		  test.innerHTML += "<input type='radio' name='choices' value='A'> "+chA+"<br>";
 		  test.innerHTML += "<input type='radio' name='choices' value='B'> "+chB+"<br>";
 		  test.innerHTML += "<input type='radio' name='choices' value='C'> "+chC+"<br>";
